@@ -9,6 +9,14 @@ import { DetailsComponent } from './details/details.component';
 import { EditComponent } from './edit/edit.component';
 import { FilterComponent } from './filter/filter.component';
 
+import { Route, RouterModule } from '@angular/router';
+const routes: Route[] = [
+{ path: '', component: ListComponent },
+{ path: 'details/:id', component: DetailsComponent },
+{ path: 'edit/:id', component: EditComponent },
+{ path: 'create', component: EditComponent }
+];
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +28,8 @@ import { FilterComponent } from './filter/filter.component';
   imports: [
     BrowserModule,
     HttpClientModule,
-    NgbModule
+    NgbModule,
+    RouterModule.forRoot(routes)
   ],
   providers: [],
   bootstrap: [AppComponent]
