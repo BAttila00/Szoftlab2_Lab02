@@ -6,11 +6,11 @@
     </button>
     <div class="collapse navbar-collapse" [ngbCollapse]="navBarCollapsed">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
+        <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
           <a [routerLink]="['/']" class="nav-link">Hirdetések</a>
         </li>
-        <li class="nav-item">
-          <a routerLink="/create" class="nav-link">Hirdetés feladása</a>
+        <li class="nav-item" [class.active]="createActive.isActive">
+          <a routerLink="/create" routerLinkActive #createActive="routerLinkActive" class="nav-link">Hirdetés feladása</a>
         </li>
       </ul>
     </div>
